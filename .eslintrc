@@ -7,26 +7,18 @@
   ],
   "plugins": ["simple-import-sort", "sort-destructure-keys", "sort-keys"],
   "rules": {
+    "no-undef": 2,
+    "no-unused-vars": 2,
     "react/prop-types": [2, { "ignore": ["children"] }],
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
           ["^@?\\w"],
-          ["@/App", "@/context/", "@/usecase/", "@/hooks/", "@/components/"],
+          ["@/app", "@/modules", "@/repository"],
+          ["@/components", "@/hooks"],
+          ["@/utils", "@/constant"],
           [
-            "@/utils/",
-            "@/constant/",
-            "@/model/",
-            "@/contract/",
-            "@/graphql/",
-            "@/types/",
-            "@/assets/",
-            "@/__data-mocks__/",
-            "@/__gql-mocks__/"
-          ],
-          [
-            "^\\u0000",
             "^\\.\\.(?!/?$)",
             "^\\.\\./?$",
             "^\\./(?=.*/)(?!/?$)",

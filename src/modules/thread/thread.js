@@ -1,3 +1,5 @@
-const ThreadModules = () => <div>Thread Props</div>;
+const ThreadModules = () => {
+  return <div>Thread Props</div>;
+};
 
 export default ThreadModules;
