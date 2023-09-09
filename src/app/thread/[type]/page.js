@@ -4,14 +4,10 @@ async function getServerSideProps() {
   return { ping: "pong" };
 }
 
-const HomepageRouting = async () => {
+const ThreadRouting = async () => {
   await getServerSideProps();
 
-  return (
-    <>
-      <ThreadModules />
-    </>
-  );
+  return <ThreadModules />;
 };
 
-export default HomepageRouting;
+export default ThreadRouting;
