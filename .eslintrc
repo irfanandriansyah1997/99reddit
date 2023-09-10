@@ -9,6 +9,7 @@
   "rules": {
     "no-undef": 2,
     "no-unused-vars": 2,
+    "react/display-name": [0],
     "react/prop-types": [0],
     "simple-import-sort/imports": [
       2,
@@ -17,7 +18,7 @@
           ["^@?\\w"],
           ["@/app", "@/modules", "@/repository"],
           ["@/components", "@/hooks"],
-          ["@/utils", "@/constant"],
+          ["@/utils", "@/constant", "@/mocks"],
           [
             "^\\.\\.(?!/?$)",
             "^\\.\\./?$",

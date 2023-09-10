@@ -10,10 +10,11 @@ export const normalizerAboutAPI = (response) => {
     const {
       data: {
         accounts_active,
+        banner_background_image,
+        community_icon,
         description_html,
         display_name_prefixed,
         header_img,
-        mobile_banner_image,
         primary_color,
         subscribers,
         title,
@@ -22,10 +23,11 @@ export const normalizerAboutAPI = (response) => {
 
     return {
       accountActive: safeParseNumber(accounts_active),
-      bannerImage: safeParseString(mobile_banner_image),
+      bannerImage: decodeHTMLEntities(safeParseString(banner_background_image)),
       description: decodeHTMLEntities(safeParseString(description_html)),
       primaryColor: safeParseString(primary_color),
       subRedditLogo: safeParseString(header_img),
+      subRedditLogoSmall: decodeHTMLEntities(safeParseString(community_icon)),
       subRedditName: safeParseString(title),
       subRedditPrefixName: safeParseString(display_name_prefixed),
       subscribersNum: safeParseNumber(subscribers),

@@ -1,0 +1,163 @@
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Regular-116bb6d508f5307861d3b1269bc597e7-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Regular-e6bbcdd30d3bd4d6b170bcb6d3552cab-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 500;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Medium-c4b185e25a4dde85a29f902cd5ce5360-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Medium-1051a531d3e1ee3483a6533158557139-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: IBMPlexSans;
+  font-weight: 700;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Bold-875de5047556e7c822519d95d7ee692d-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/IBMPlexSans/Bold-c34ba754b7235b49d33b294ff7a54179-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: Noto Mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoMono/Regular-b16bb0524a7e7ee597970333c0c67180-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoMono/Regular-e6bbcdd30d3bd4d6b170bcb6d3552cab-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: Noto Mono;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoMono/el-Regular-29d72243d2cd6145b28bcb80dc33f0e4-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoMono/el-Regular-06ee3f893717454d11a16c3e8d0aa9f9-font.woff) format("woff");
+  unicode-range: U+0370-03ff, U+1f??
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Regular-d6a6aa8dc0f93416a832ea04a18c6fb8-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Regular-e6bbcdd30d3bd4d6b170bcb6d3552cab-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 400;
+  font-style: italic;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Italic-fca7c15cdda5570c8f739b9d71e9ed6d-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Italic-5267af566ab853eb9d74db1a78a46c67-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 700;
+  font-style: normal;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-d4ba4ecba17e90993f442f7bb082a3a2-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-c34ba754b7235b49d33b294ff7a54179-font.woff) format("woff")
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-weight: 700;
+  font-style: italic;
+  src: url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-Italic-be39cd37f002d25d500c67b88871bed4-font.woff2) format("woff2"), url(https://www.redditstatic.com/desktop2x/fonts/NotoSans/Bold-Italic-255b4934a1f414dd312aa89382d65114-font.woff) format("woff")
+}
+
+body {
+  font-family: IBMPlexSans, Arial, sans-serif;
+  font-feature-settings: normal;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  font-stretch: 100%;
+  background-color: var(--background);
+}
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}

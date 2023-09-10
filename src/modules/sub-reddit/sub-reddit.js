@@ -1,31 +1,41 @@
-import Image from "next/image";
+"use client";
+
+import { useMemo } from "react";
+
+import Header from "@/components/Header";
+
+import { getColorPallete } from "@/utils/color";
 
 const SubRedditModules = (props) => {
-  const { bannerImage, children, subRedditLogo, subRedditName } = props;
+  const {
+    bannerImage,
+    children,
+    primaryColor,
+    subRedditLogo,
+    subRedditLogoSmall,
+    subRedditName,
+    subRedditPrefixName,
+  } = props;
+
+  const colorPallete = useMemo(
+    () => getColorPallete({ primaryColor }),
+    [primaryColor]
+  );
 
   return (
     <html lang="en">
-      <body>
-        <div>
-          <Image
-            src={subRedditLogo}
-            alt={subRedditName}
-            width={80}
-            height={80}
-          />
-          <div style={{ height: "200px", position: "relative", width: "100%" }}>
-            <Image
-              src={bannerImage}
-              alt={subRedditName}
-              fill
-              objectFit="cover`"
-            />
-          </div>
-        </div>
-        <div>
+      <body style={colorPallete}>
+        <Header
+          bannerImage={bannerImage}
+          subRedditLogo={subRedditLogo}
+          subRedditLogoSmall={subRedditLogoSmall}
+          subRedditName={subRedditName}
+          subRedditPrefixName={subRedditPrefixName}
+        />
+        <container>
           <div>{children}</div>
           <div>Sidebar</div>
-        </div>
+        </container>
       </body>
     </html>
   );
