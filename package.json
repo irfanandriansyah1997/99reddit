@@ -25,6 +25,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sort-destructure-keys": "^1.5.0",
     "eslint-plugin-sort-keys": "^2.3.5",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "sass": "^1.66.1"
   }
 }

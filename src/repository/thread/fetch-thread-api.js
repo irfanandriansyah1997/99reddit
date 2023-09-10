@@ -1,9 +1,4 @@
-import {
-  DEFAULT_THREAD_KIND,
-  MAX_THREAD_ITEM,
-  THREAD_KIND,
-} from "@/repository/thread/constant";
-
+import { createHTTPRequest } from "@/utils/fetch-api";
 import {
   DEFAULT_SUB_REDDIT,
   THREAD_HOT_JSON_API,
@@ -11,7 +6,15 @@ import {
   THREAD_TOP_JSON_API,
 } from "@/constant";
 
-export const generateThreadAPIURL = (args) => {
+import { normalizerThreadAPI } from "./normalizer/normalizer-thread-api";
+import {
+  DEFAULT_THREAD_KIND,
+  DEFAULT_THREAD_LIST,
+  MAX_THREAD_ITEM,
+  THREAD_KIND,
+} from "./constant";
+
+const _generateThreadAPIURL = (args) => {
   const {
     after = null,
     kind = DEFAULT_THREAD_KIND,
@@ -40,4 +43,24 @@ export const generateThreadAPIURL = (args) => {
   if (limit) formattedUrl.searchParams.set("limit", limit);
 
   return formattedUrl.toString();
+};
+
+export const fetchThreadAPI = async (args = {}) => {
+  const {
+    after = null,
+    kind = DEFAULT_THREAD_KIND,
+    limit = MAX_THREAD_ITEM,
+  } = args;
+  const url = _generateThreadAPIURL({ after, kind, limit });
+
+  const { error, result } = await createHTTPRequest(url);
+
+  if (error instanceof Error) {
+    return {
+      error: error.message,
+      result: DEFAULT_THREAD_LIST,
+    };
+  }
+
+  return { error: undefined, result: normalizerThreadAPI(result) };
 };

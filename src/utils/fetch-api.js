@@ -3,7 +3,9 @@ import { castingError } from "./error";
 export const createHTTPRequest = async function (url) {
   try {
     const responseAPI = await fetch(url, {
+      cache: "force-cache",
       method: "GET",
+      next: { tags: ["collection"] },
     });
 
     if (!responseAPI.ok) {

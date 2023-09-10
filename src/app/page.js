@@ -1,16 +1,20 @@
-import ThreadModules from "@/modules/thread";
+import { notFound } from "next/navigation";
 
-async function getServerSideProps() {
-  return { ping: "pong" };
-}
+import ThreadListModules from "@/modules/thread-list";
+import { DEFAULT_THREAD_KIND } from "@/repository/thread/constant";
+import { fetchThreadAPI } from "@/repository/thread/fetch-thread-api";
 
 const HomepageRouting = async () => {
-  await getServerSideProps();
+  const { error, result } = await fetchThreadAPI({ kind: DEFAULT_THREAD_KIND });
+
+  if (error || typeof result === "undefined") return notFound();
 
   return (
-    <>
-      <ThreadModules />
-    </>
+    <ThreadListModules
+      hasAvailableNextPage={result.hasAvailableNextPage}
+      threadId={result.threadId}
+      threadList={result.threadList}
+    />
   );
 };
 
