@@ -4,6 +4,8 @@ export const THREAD_KIND = {
   top: 3,
 };
 
+export const DEFAULT_THREAD_KIND = THREAD_KIND.hot;
+
 export const THREAD_VOTE_KIND = {
   downVote: -1,
   none: 0,
@@ -17,8 +19,6 @@ export const THREAD_CONTENT_KIND = {
   video: 3,
   videoIframe: 4, // youtube
 };
-
-export const DEFAULT_THREAD_KIND = THREAD_KIND.hot;
 
 export const MAX_THREAD_ITEM = 25;
 

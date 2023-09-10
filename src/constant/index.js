@@ -16,6 +16,6 @@ export const THREAD_TOP_JSON_API =
   "https://www.reddit.com/r/{subReddit}/top.json";
 
 export const COMMENT_JSON_API =
-  "https://www.reddit.com/r/{subReddit}/comments/{articleId}.json";
+  "https://www.reddit.com/r/{subReddit}/comments/{threadId}.json";
 
 export const ABOUT_JSON_API = "https://www.reddit.com/r/{subReddit}/about.json";

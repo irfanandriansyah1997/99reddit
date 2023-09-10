@@ -9,9 +9,9 @@
   "rules": {
     "no-undef": 2,
     "no-unused-vars": 2,
-    "react/prop-types": [2, { "ignore": ["children"] }],
+    "react/prop-types": [0],
     "simple-import-sort/imports": [
-      "error",
+      2,
       {
         "groups": [
           ["^@?\\w"],
