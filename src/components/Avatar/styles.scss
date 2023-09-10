@@ -1,0 +1,26 @@
+.avatar {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &--rounded {
+    border-radius: 5px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--with-border {
+    border: 4px solid var(--basic-color);
+  }
+}
